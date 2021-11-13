@@ -10,24 +10,22 @@ interface ModoProductividad{
 }
 
 public abstract class Radio implements ModoTelefono, ModoProductividad{
-    private boolean encendido;
-    private boolean apagado;
-    private int vol; 
-    private boolean frecuencia;
-    private ArrayList<String> Emisoras = new ArrayList<String>();
-    private ArrayList<String[]> playList1 = new ArrayList<String[]>();
-    private ArrayList<String[]> playList2 = new ArrayList<String[]>();
-    private ArrayList<String[]> playList3 = new ArrayList<String[]>();
-    private int cancionActual;
-    private ArrayList<String[]> playListActual = new ArrayList<String[]>();
-    private boolean conecTelefono;
-    private ArrayList<String[]> Agenda = new ArrayList<String[]>();
-    private boolean enLlamada;
-    private String[] UltimoContacto = new String[2];
+    protected int vol; 
+    protected boolean frecuencia;
+    protected ArrayList<String> Emisoras = new ArrayList<String>();
+    protected ArrayList<String[]> playList1 = new ArrayList<String[]>();
+    protected ArrayList<String[]> playList2 = new ArrayList<String[]>();
+    protected ArrayList<String[]> playList3 = new ArrayList<String[]>();
+    protected int cancionActual;
+    protected ArrayList<String[]> playListActual = new ArrayList<String[]>();
+    protected boolean conecTelefono;
+    protected ArrayList<String[]> agenda = new ArrayList<String[]>();
+    protected boolean enLlamada;
+    protected String[] UltimoContacto = new String[2];
 
 
 
-
+    
 
     public ArrayList<String> getEmisoras() {
         return Emisoras;
@@ -74,7 +72,7 @@ public abstract class Radio implements ModoTelefono, ModoProductividad{
     }
 
     public String getConecTelefono(){
-
+        return "Se ha conectado el telefono.";
     }
 
     public ArrayList<String[]> getAgenda() {
@@ -83,6 +81,22 @@ public abstract class Radio implements ModoTelefono, ModoProductividad{
 
     public int getVol() {
         return vol;
+    }
+
+    public boolean getEnLlamada(){
+        return enLlamada;
+    }
+
+    public void setEnLlamada() {
+        if(this.enLlamada == false){
+            this.enLlamada = true;
+        }else if(this.enLlamada == true){
+            this.enLlamada = false;
+        }
+    }
+
+    public void setUltimoContacto(String[] ultimoContacto) {
+        UltimoContacto = ultimoContacto;
     }
 
     public abstract String especialProd();
