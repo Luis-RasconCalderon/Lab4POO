@@ -16,7 +16,7 @@ public abstract class Radio implements ModoTelefono, ModoProductividad{
     protected ArrayList<String[]> playList1 = new ArrayList<String[]>();
     protected ArrayList<String[]> playList2 = new ArrayList<String[]>();
     protected ArrayList<String[]> playList3 = new ArrayList<String[]>();
-    protected int cancionActual;
+    protected String[] cancionActual;
     protected ArrayList<String[]> playListActual = new ArrayList<String[]>();
     protected boolean conecTelefono;
     protected ArrayList<String[]> agenda = new ArrayList<String[]>();
@@ -102,4 +102,23 @@ public abstract class Radio implements ModoTelefono, ModoProductividad{
     public abstract String especialProd();
 
     public abstract String especialTelefono();
+    
+    public ArrayList<String[]> CrearPlayList1 (){
+        String [] Cancion1 = {"Easy on me", "Adele","2:31", "Hip Hop"};
+        String [] Cancion2 = {"Stay","The Kid LAROI & Justin Bieber","3:43", "Hip Hop"};
+        String [] Cancion3 = {"Industry Baby","Lil Nas x & Jack Harlow","4:45", "Rap"};
+        String [] Cancion4 = {"Bad Habits","Ed Sheeran","5:10", "Hip Hop"};
+        String [] Cancion5 = {"Fancy Like","Walker Hayes","4:10"};
+        Stirng [] Cancion6 = {"Best Be Believing", "AlunaGeorge", "6:10", "House"};
+        String [] Cancion7 = {"","","",""};
+        String [] Cancion8 = {"","","",""};
+        String [] Cancion9 = {"","","",""};
+        
+        playList1.add(Cancion1);
+        playList1.add(Cancion2);
+        playList1.add(Cancion3);
+        playList1.add(Cancion4);
+        playList1.add(Cancion5);
+        return playList1;
+    }
 }

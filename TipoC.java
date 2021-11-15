@@ -9,6 +9,13 @@ public class TipoC extends Radio {
         agenda.add(contacto2);
         agenda.add(contacto3);
 
+        String [] Cancion1 = {"Easy on me", "Adele","2:31"};
+        String [] Cancion2 = {"Stay","The Kid LAROI & Justin Bieber","3:43"};
+        String [] Cancion3 = {"Industry Baby","Lil Nas x & Jack Harlow","4:45"};
+        playList1.add(Cancion1);
+        playList2.add(Cancion2);
+        playList3.add(Cancion3);
+
         enEspera = false;
     }
 

@@ -98,7 +98,114 @@ public class Vista {
     public void colgar(){
         System.out.println("Se ha colgado la llamada.");
     }
+    //  Modo reproduccion 
+    public int menuRep (){
+        System.out.println("Las opciones para el modo reproductor son: \n1: Mostrar playlists\n2: Mostrar cancion\n3: Reproducir cancio\n: Cerrar reproductor");
+ 
+        int t = 1;
+        String sr ="";
 
+        while(t !=0 ){
+            sr = sc.next();
+            if(sr.equals("1")||st.equals("2")||sr.equals("3")||sr.equals("4")){
+                t = 0;
+            }else{
+                System.out.println("\nIngrese una opción valida.");
+            }
+
+        }
+        return Integer.parseInt(st);
+        
+        //Cambiar Cancion 
+    }
+
+
+    public void mostrarPlayList(ArrayList<String[]> playlist1, ArrayList<String[]> playlist2, ArrayList<String[]> playlist3){
+        System.out.println("Playlist 1: ");
+        for(int p = 0; p<playList1.size();p++){
+            System.out.println((p+1)+" Nombre del artista: " + playlist1.get(p)[0] + " tiutulo de la cancion: " + playlist1.get(p)[1] + " Duracion: " + playlist1.get(p)[2] + "genero: " + playlist1.get(p)[3]);
+
+        }
+
+        System.out.println("\nPlaylist 2: ");
+        for(int p = 0; p<playList1.size();p++){
+            System.out.println((p+1)+" Nombre del artista: " + playlist2.get(p)[0] + " tiutulo de la cancion: " + playlist2.get(p)[1] + " Duracion: " + playlist2.get(p)[2] + "genero: " + playlist2.get(p)[3]);
+
+        }
+
+        System.out.println("\nPlaylist 3: ");
+        for(int p = 0; p<playList1.size();p++){
+            System.out.println((p+1)+" Nombre del artista: " + playlist3.get(p)[0] + " tiutulo de la cancion: " + playlist3.get(p)[1] + " Duracion: " + playlist3.get(p)[2] + "genero: " + playlist3.get(p)[3]);
+
+        }
+    }
+
+    public String[] SeleccionarCancion(ArrayList<String[]> playlist1, ArrayList<String[]> playlist2, ArrayList<String[]> playlist3){
+        System.out.println("Playlist 1: ");
+        for(int p = 0; p<playList1.size();p++){
+            System.out.println((p+1)+" Nombre del artista: " + playlist1.get(p)[0] + " tiutulo de la cancion: " + playlist1.get(p)[1] + " Duracion: " + playlist1.get(p)[2] + "genero: " + playlist1.get(p)[3]);
+
+        }
+
+        System.out.println("\nPlaylist 2: ");
+        for(int p = 0; p<playList1.size();p++){
+            System.out.println((p+1)+" Nombre del artista: " + playlist2.get(p)[0] + " tiutulo de la cancion: " + playlist2.get(p)[1] + " Duracion: " + playlist2.get(p)[2] + "genero: " + playlist2.get(p)[3]);
+
+        }
+
+        System.out.println("\nPlaylist 3: ");
+        for(int p = 0; p<playList1.size();p++){
+            System.out.println((p+1)+" Nombre del artista: " + playlist3.get(p)[0] + " tiutulo de la cancion: " + playlist3.get(p)[1] + " Duracion: " + playlist3.get(p)[2] + "genero: " + playlist3.get(p)[3]);
+
+        }
+
+        System.out.println("Que playlist quiere desea utilizar: ");
+        int j = 1;
+        String psele = "";
+
+        while(j != 0){
+            psele = sc.nextLine();
+            if(psele.equals("1")||psele.equals("2")||psele.equals("3")){
+                j = 0;
+            }else{
+                System.out.println("\nIngrese una opción valida.");
+            }
+        }
+
+        ArrayList<String[]> pListseleccionada = new ArrayList<String[]>();
+        if(Integer.parseInt(psele)==1){
+            pListseleccionada = playlist1;
+        }else if(Integer.parseInt(psele)==2){
+            pListseleccionada = playlist2;
+        }else if(Integer.parseInt(psele)==3){
+            pListseleccionada = playlist3;
+        }
+
+        System.out.println("\nPlaylist seleccionada: ");
+        for(int p = 0; p<playList1.size();p++){
+            System.out.println((p+1)+" Nombre del artista: " + pListseleccionada.get(p)[0] + " tiutulo de la cancion: " + pListseleccionada.get(p)[1] + " Duracion: " + pListseleccionada.get(p)[2] + "genero: " + pListseleccionada.get(p)[3]);
+
+        }
+
+        System.out.println("Que cancion quiere escuchar: ");
+        int g = 1;
+        String csele = "";
+
+        while(g != 0){
+            csele = sc.nextLine();
+            if(csele.equals("1")||csele.equals("2")||csele.equals("3")){
+                j = 0;
+            }else{
+                System.out.println("\nIngrese una opción valida.");
+            }
+        }
+
+
+        String[] can = pListseleccionada.get(Integer.parseInt(csele)-1)
+
+        return can;
+
+    }
 
 
 

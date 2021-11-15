@@ -27,6 +27,15 @@ public class Controlador{
             }else if( m == 2){ // Modo Reproductor
                 while(modoRepro != 0){
                     int mr = vs.menuRep(r.toString());//Menu que muestra las opciones para el modo reproductor. Colocar un if/else if por cada opción
+                    if(mr == 1){
+                        vs.mostrarPlayList(r.getPlayList1(), r.getPlayList2(), r.getPlayList3());
+                    }else if(mr == 2){
+                        vs.emitirMensaje(r.getCancionActual());
+                    }else if(mr == 3){
+                        String[] cs = vs.SeleccionarCancion(r.getPlayList1(), r.getPlayList2(), r.getPlayList3());
+                        r.setCancionActual(cs);
+
+                    }
                 }
             
 
