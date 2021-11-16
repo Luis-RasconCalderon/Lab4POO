@@ -8,12 +8,36 @@ public class TipoA extends Radio {
         agenda.add(contacto1);
         agenda.add(contacto2);
         agenda.add(contacto3);
+
+        String [] Cancion1 = {"Sinner", "Ric Wilson","4:31","Hip hop"};
+        String [] Cancion2 = {"Dance, dance","Fall Out Boy","3:00","punk rock"};
+        String [] Cancion3 = {"Condenado para el millon","Paulo Londra","3:42","hip hop"};
+        playList1.add(Cancion1);
+        playList1.add(Cancion2);
+        playList1.add(Cancion3);
+
+        String [] Cancion4 = {"Vete","Bad Bunny","3:12", "Reggaeton"};
+        String [] Cancion5 = {"Supersonic","Skrillex","2:47","Electronica"};
+        String [] Cancion6 = {"Paralyzed", "Sueco", "2:42", "Metal"};
+        playList2.add(Cancion4);
+        playList2.add(Cancion5);
+        playList2.add(Cancion6);
+
+        String [] Cancion7 = {"SAD!","XXXTENTACION","2:46", "Hip hop"};
+        String [] Cancion8 = {"Asylum","Vended","2:52", "Metal"};
+        String [] Cancion9 = {"Wishing Well", "Juice WRLD", "3:14", "Hip hop"};
+        playList3.add(Cancion7);
+        playList3.add(Cancion8);
+        playList3.add(Cancion9);
+
+        frecuencia = true;
+
     }
 
     @Override
     public String especialProd() {
         // TODO Auto-generated method stub
-        return null;
+        return "*Se muestran tarjetas de presentacion*";
     }
 
     @Override
@@ -25,7 +49,12 @@ public class TipoA extends Radio {
 
     @Override
     public String toString(){
-        return "\n4: Llamar al último contacto";
+        return "\n4: Ver tarjetas de presentación";
+    }
+
+    @Override
+    public String toString2(){
+        return "4: Llamar al último contacto llamado";
     }
 
 

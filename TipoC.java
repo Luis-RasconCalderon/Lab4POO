@@ -9,13 +9,29 @@ public class TipoC extends Radio {
         agenda.add(contacto2);
         agenda.add(contacto3);
 
-        String [] Cancion1 = {"Easy on me", "Adele","2:31"};
-        String [] Cancion2 = {"Stay","The Kid LAROI & Justin Bieber","3:43"};
-        String [] Cancion3 = {"Industry Baby","Lil Nas x & Jack Harlow","4:45"};
+        String [] Cancion1 = {"Easy on me", "Adele","2:31","pop"};
+        String [] Cancion2 = {"Stay","The Kid LAROI & Justin Bieber","3:43","pop"};
+        String [] Cancion3 = {"Industry Baby","Lil Nas x & Jack Harlow","4:45","hip hop"};
         playList1.add(Cancion1);
-        playList2.add(Cancion2);
-        playList3.add(Cancion3);
+        playList1.add(Cancion2);
+        playList1.add(Cancion3);
 
+        String [] Cancion4 = {"Bad Habits","Ed Sheeran","5:10", "Hip Hop"};
+        String [] Cancion5 = {"Fancy Like","Walker Hayes","4:10","Country"};
+        String [] Cancion6 = {"Best Be Believing", "AlunaGeorge", "6:10", "House"};
+        playList2.add(Cancion4);
+        playList2.add(Cancion5);
+        playList2.add(Cancion6);
+
+        String [] Cancion7 = {"Overthinker","INZO","4:28", "Electronica"};
+        String [] Cancion8 = {"You are gonna go far, kid","The Offspring","2:57", "Rock"};
+        String [] Cancion9 = {"Juliet", "Cavetown", "4:39", "Indie"};
+        playList3.add(Cancion7);
+        playList3.add(Cancion8);
+        playList3.add(Cancion9);
+
+
+        frecuencia = true;
         enEspera = false;
     }
 
@@ -23,7 +39,7 @@ public class TipoC extends Radio {
     @Override
     public String especialProd() {
         // TODO Auto-generated method stub
-        return null;
+        return "*Muestra el pronóstico del tiempo*";
     }
 
     @Override
@@ -31,6 +47,12 @@ public class TipoC extends Radio {
         String esp = "";
         if(enLlamada == true & enEspera == false){
             esp = "Se ha colocado la llamada en espera";
+            enLlamada = false;
+            enEspera = true;
+        }else if(enEspera == true & enLlamada == false){
+            esp = "Se ha reanudado la llamda";
+            enLlamada = true;
+            enEspera = false;
         }else if(enLlamada == false || enEspera == true){
             esp = "No se puede colocar llamada en espera. No existe llamada activa o ya hay una en espera";
         }
@@ -39,7 +61,14 @@ public class TipoC extends Radio {
 
     @Override
     public String toString(){
-        return "\n4: Poner llamada en espera.";
+        return "\n4: Ver pronostico del tiempo.";
+    }
+
+
+    @Override
+    public String toString2() {
+        // TODO Auto-generated method stub
+        return "4. Poner llamada en espera/Reanudar llamada.";
     }
     
 }

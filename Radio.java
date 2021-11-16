@@ -3,14 +3,17 @@ import java.util.ArrayList;
 interface ModoTelefono{
     String especialTelefono();
     String toString();
+    String toString2();
 }
 
 interface ModoProductividad{
     String especialProd();
 }
 
+
 public abstract class Radio implements ModoTelefono, ModoProductividad{
     protected int vol; 
+    protected final int cambioVol =1;
     protected boolean frecuencia;
     protected ArrayList<String> Emisoras = new ArrayList<String>();
     protected ArrayList<String[]> playList1 = new ArrayList<String[]>();
@@ -31,16 +34,27 @@ public abstract class Radio implements ModoTelefono, ModoProductividad{
         return Emisoras;
     }
 
-    public void setEmisoras(String nuevaEmisora) {
+    public void setEmisora(String nuevaEmisora) {
         Emisoras.add(nuevaEmisora);
     }
 
     public String getFrecuencia(){
-        
+        String frec = "";
+        if(frecuencia == true){
+            frec = "FM";
+        }else if(frecuencia == false){
+            frec = "AM";
+        }
+
+        return frec;
     }
 
     public void setFrecuencia() {
-        
+        if(frecuencia == true){
+            frecuencia = false;
+        }else if(frecuencia == false){
+            frecuencia = true;
+        }
     }
 
     public ArrayList<String[]> getPlayList1() {
@@ -55,28 +69,29 @@ public abstract class Radio implements ModoTelefono, ModoProductividad{
         return playList3;
     }
 
-    public void setCancionActual(int nuevaCancion) {
+    public void setCancionActual(String[] nuevaCancion) {
         cancionActual = nuevaCancion;
     }
 
-    public String[] getCancionAhora(){
-        return playListActual.get(cancionActual);
+    public String getCancionActual(){
+        String canc ="";
+        if(cancionActual != null){
+        canc = " Titulo de la canción: "+ cancionActual[0] + " //// Nombre del artista: " +cancionActual[1] + " /// Duración: "+ cancionActual[2] + " //// genero: " + cancionActual[3];
+        }else if(cancionActual==null){
+            canc = "\nActualmenteno se está reproduciendo ninguna cantión.";
+        }
+
+    return canc;
     }
 
-    public void setPlayListActual() {
-        
-    }
-
-    public ArrayList<String[]> getPlayListActual() {
-        return playListActual;
-    }
+    
 
     public String getConecTelefono(){
         return "Se ha conectado el telefono.";
     }
 
     public ArrayList<String[]> getAgenda() {
-        return Agenda;
+        return agenda;
     }
 
     public int getVol() {
@@ -99,26 +114,16 @@ public abstract class Radio implements ModoTelefono, ModoProductividad{
         UltimoContacto = ultimoContacto;
     }
 
+    public void bajarVol(){
+        vol = vol - cambioVol;
+    }
+
+    public void subirVol(){
+        vol = vol + cambioVol;
+    }
+
     public abstract String especialProd();
 
     public abstract String especialTelefono();
     
-    public ArrayList<String[]> CrearPlayList1 (){
-        String [] Cancion1 = {"Easy on me", "Adele","2:31", "Hip Hop"};
-        String [] Cancion2 = {"Stay","The Kid LAROI & Justin Bieber","3:43", "Hip Hop"};
-        String [] Cancion3 = {"Industry Baby","Lil Nas x & Jack Harlow","4:45", "Rap"};
-        String [] Cancion4 = {"Bad Habits","Ed Sheeran","5:10", "Hip Hop"};
-        String [] Cancion5 = {"Fancy Like","Walker Hayes","4:10"};
-        Stirng [] Cancion6 = {"Best Be Believing", "AlunaGeorge", "6:10", "House"};
-        String [] Cancion7 = {"","","",""};
-        String [] Cancion8 = {"","","",""};
-        String [] Cancion9 = {"","","",""};
-        
-        playList1.add(Cancion1);
-        playList1.add(Cancion2);
-        playList1.add(Cancion3);
-        playList1.add(Cancion4);
-        playList1.add(Cancion5);
-        return playList1;
-    }
 }
