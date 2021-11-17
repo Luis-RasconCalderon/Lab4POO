@@ -1,5 +1,9 @@
 public class TipoS extends Radio {
+    //Atributos
+    // Determina si el usuario desea cambiar entre entradas de audio.
     private boolean speaker; 
+    //Metodos
+     // Constructor de la clase TipoS determinando la lista de contactos y playLists. 
     public TipoS(){
         String[] contacto1 = {"Javier","46554687"};
         String[] contacto2 = {"Ana","48949878"};
@@ -34,12 +38,12 @@ public class TipoS extends Radio {
         speaker = false;
     }
 
-
+//Override de la clase Radio
     @Override
     public String especialProd() {
         return "\n*Se estan planificando viajes.*\n";
     }
-
+// A través de un if statement determina que tipo de salida de usuario requiere el usuario; bocinas o auriculares.
     @Override
     public String especialTelefono() {
         String esp = "";
@@ -52,7 +56,7 @@ public class TipoS extends Radio {
         return esp;
     }
     
-
+ // Se le muestra al usuario un mensaje del cambio de bocinas a auriculares. 
     @Override
     public String toString(){
         return "\n4: Planificar viajes";

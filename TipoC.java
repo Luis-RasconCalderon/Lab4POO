@@ -1,5 +1,9 @@
 public class TipoC extends Radio {
+    //Atributos
+    // Define si el usuario tiene una llamada en espera
     private boolean enEspera;
+    //Métodos
+    // Constructor de la clase  Tipo C, permite asignarle el valor de sus atributos considerando la herencia de Radio.
     public TipoC(){
         String[] contacto1 = {"Alfredo","56874852"};
         String[] contacto2 = {"Maria","87945654"};
@@ -41,7 +45,7 @@ public class TipoC extends Radio {
         // TODO Auto-generated method stub
         return "*Muestra el pronóstico del tiempo*";
     }
-
+// Override de la clase Radio, ciclo que determina si una llamada se pondrá en espera, únicamente si está en llamadas y  desea dejarlo en espera. 
     @Override
     public String especialTelefono() {
         String esp = "";
@@ -58,7 +62,7 @@ public class TipoC extends Radio {
         }
         return esp;
     }
-
+ // mensaje que se le muestra al usuario cuando pone una llamada en espera.
     @Override
     public String toString(){
         return "\n4: Ver pronostico del tiempo.";
